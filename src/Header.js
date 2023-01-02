@@ -16,7 +16,7 @@ function Header() {
                          <div className="col-auto">
                             
                             <div className='main_search d-flex align-items-center'>
-                                <input type="text"  placeholder='Search for products, brands and more '/><i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text"  placeholder='Search for products, brands and more '/>
                                 <div className="main_icon">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
@@ -48,17 +48,18 @@ function Header() {
                     </div>
                 </div>
             </section>
-            <section className='header2'>
+            <section className='header2 '>
                 <div className='container'>
                     <div className='row align-item-center d-flex justify-content-around '>
                         <div className='col-auto'>
                             <nav>
                                 <ul className='m-0 list-unstyled d-flex  main_menu'>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Pages</a></li>
-                                    <li><a href="#">Category</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#"style={{color:"black" , fontSize:"17px"}}>Home</a></li>
+                                    <li><a href="#">Mobile</a></li>
+                                    <li><a href="#">Laptop</a></li>
+                                    <li><a href="#">Grocerry</a></li>
+                                    <li><a href="#">Skin care products</a></li>
+                                    <li><a href="#">Handcraft products</a></li>
                                 </ul>
                             </nav>
                         </div>

@@ -6,6 +6,8 @@ function Single_products() {
   const { id } = useParams()
   const [result, getresult] = useState([])
   const [spin, setspin] = useState(false)
+  const [get, setget]=useState([])
+
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${id}`)
       .then(function (response) {
@@ -23,7 +25,7 @@ function Single_products() {
   if (spin) {
     return (
       <>
-        <div className="container">
+        {/* <div className="container">
           <div className="row bg-success">
             <div className="col-auto">
               <img src={result.thumbnail} alt="" />
@@ -35,7 +37,79 @@ function Single_products() {
               <h6>Brand:{result.brand}</h6>
             </div>
           </div>
+        </div> */}
+
+        <div className="single-product mt-5 pt-5 pb-5">
+          <div className="container">
+            <div className="row align-item-center">
+              <div className="col-lg-6">
+                <div className="product-thumbnail d-flex align-item-center gap-3">
+                  <div className="fix">
+                    <div className="product-img">
+                      <a href="#">
+                        <img src={result.images[0]} alt="" 
+                        onClick={()=>{
+                          setget(result.images[0]);
+                        }}/>
+                      </a>
+                    </div>
+                    <div className="product-img">
+                      <a href="#">
+                        <img src={result.images[1]} alt="" 
+                        onClick={()=>{
+                          setget(result.images[1]);
+                        }}/>
+                      </a>
+                    </div>
+                    <div className="product-img">
+                      <a href="#">
+                        <img src={result.images[2]} alt="" 
+                        onClick={()=>{
+                          setget(result.images[2]);
+                        }}/>
+                      </a>
+                    </div>
+                    <div className="product-img">
+                      <a href="#">
+                        <img src={result.images[3]} alt="" 
+                        onClick={()=>{
+                          setget(result.images[3]);
+                        }}/>
+                      </a>
+                    </div>
+                  </div>
+                  {/* <a href="#">
+                    <img src="{get}" alt="" />
+                  </a> */}
+                  <div className="col-auto mt-5">
+                    <img src={result.thumbnail} alt="" />
+                  </div>
+                  
+                </div>
+
+              </div>
+              <div className="col-lg-6">
+                <div className="pro-img-content">
+                  <div className="part1">
+                    <p>{result.description}</p>
+                    <h2 className="mb-3">M.R.P:<i class="fa-solid fa-indian-rupee-sign"></i> {result.price}</h2>
+                    <h5 className="rating">{result.rating}<i class="fa-solid fa-star" style={{color:'white'}}></i></h5>
+                    <h5 className="mt-4">Category : {result.category}</h5>
+                    <h5>Discount : {result.discountPercentage}% off</h5>
+                    <h5>Brand : {result.brand}</h5>
+                    <h5>Stock : {result.stock} are left...</h5>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <button className=" btn1 mt-5">
+                  <a href="/">back</a>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
+
       </>
     )
   }
